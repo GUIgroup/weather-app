@@ -42,19 +42,22 @@ export default class Iphone extends Component {
 		// display all weather data
 		return (
 			<div class={ style.container }>
-				<div class={ style.header }>
-					<div class={ style.city }>{ this.state.locate }</div>
-					<div class={ style.conditions }>{ this.state.cond }</div>
-					<span class={ tempStyles }>{ this.state.temp }</span>
+			<div class = { style.topbar }> our logo</div>
+			<div class={ style.mainwindow }>
+				<div class={ style.widgetsm }>
+					<div>{ this.state.locate }</div>
+					<div>{ this.state.cond }</div>
+					<span>{ this.state.temp }</span>
 				</div>
 				{ !this.state.display ?
-				<div class ={style.widget, style.blue}>
+				<div class ={style.widgetsm}>
 					Today the wind speed is {this.state.windSpeed} kph, blowing towards the {this.state.windDirection}
 				</div> : null}
 				<div class={ style.details }></div>
 				<div class= { style_iphone.container }>
 					{ this.state.display ? <Button class={ style_iphone.button } clickFunction={ this.fetchWeatherData }/ > : null }
 				</div>
+			</div>
 			</div>
 		);
 	}
