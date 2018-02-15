@@ -47,6 +47,10 @@ export default class Iphone extends Component {
 					<div class={ style.conditions }>{ this.state.cond }</div>
 					<span class={ tempStyles }>{ this.state.temp }</span>
 				</div>
+				{ !this.state.display ?
+				<div class ={style.widget, style.blue}>
+					Today the wind speed is {this.state.windSpeed} kph, blowing towards the {this.state.windDirection}
+				</div> : null}
 				<div class={ style.details }></div>
 				<div class= { style_iphone.container }>
 					{ this.state.display ? <Button class={ style_iphone.button } clickFunction={ this.fetchWeatherData }/ > : null }
