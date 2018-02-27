@@ -11,13 +11,14 @@ export default class Button extends Component {
 			}
 		}
 		return (
-			<form onSubmit={clickFunction}>
-        <label>
-          Search Destination<br/>
-          <input type="text" value={this.state.value} onChange={this.handleChange} />
-        </label>
-        <input type="submit" value="Submit" />
-      </form>
+			<div>
+				<form onSubmit={clickFunction}>
+					<label>
+						Search Destination <input type="text" value={this.state.value} onChange={this.handleChange} />
+					</label>
+					<input type="submit" value="Submit" />
+				</form>
+			</div>
 		);
 	}
 }

@@ -1,6 +1,6 @@
 @import '~style/helpers';
 
-.container { 
+.container {
 	display: flex;
 	flex-direction: column;
 	background-image: url('../../assets/backgrounds/clear-iphone.jpg');
@@ -8,9 +8,30 @@
 	width: 414px;
 	height: 736px;
 	text-align: center;
-	padding-top: 80px;
+	padding: 0px;
 	margin: 0 auto;
 }
+
+.mainwindow{
+	padding: 20px;
+}
+.topbar{
+	height: 15%;
+	background-color: black;
+}
+
+div.widgetsm{
+	width: 30%;
+	background-color: blue;
+	height: 30%;
+}
+
+div.widgetlg{
+	width: 60%;
+	height: 30%;
+	background-color: pink;
+}
+
 .header {
 	display: flex;
 	flex-direction: column;
@@ -22,7 +43,7 @@
 .city {
 	flex: 1;
 	font-size: 1.7em;
-	font-weight: 400;	
+	font-weight: 400;
 }
 .conditions {
 	flex: 1;

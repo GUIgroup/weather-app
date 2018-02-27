@@ -1,4 +1,24 @@
 👀 👀 👀 
+# How to contribute to this repository
+Get the link to clone or download (above right) and paste it in your command line:
+```
+git clone https/github/linkr/whatever
+```
+to clone the repo. Then make a branch locally so we son't overwrite eachother's stuff and switch to it:
+```
+git branch myname
+git checkout myname
+```
+Now you are working on you own branch. To commit your work, do:
+```
+git add filenames/go.here
+git commit -m "message about what you changed"
+```
+Now to push it to github:
+```
+git push origin myname
+```
+This will push your branch seperately so you can make a pull request to merge it with the master branch
 
 
 # Preact Boilerplate / Starter Kit for a Weather App
