@@ -34,32 +34,34 @@ export default class Iphone extends Component {
 		this.setState({ display: false });
 	}
 
+	//set sport to name
+	setSport = (name) => {
+		this.setState({ sport: name });
+	}
 	// the main render method for the iphone component
 	render() {
-		// check if temperature data is fetched, if so add the sign styling to the page
-		const tempStyles = this.state.temp ? `${style.temperature} ${style.filled}` : style.temperature;
-
 		// display all weather data
 		return (
 			<div class={ style.container }>
 			<div class = { style.topbar }> our logo</div>
+			//if not set to display, display none of this
+			{ !this.state.display ?
 			<div class={ style.mainwindow }>
 				<div class={ style.widgetsm }>
 					<div>{ this.state.locate }</div>
 					<div>{ this.state.cond }</div>
 					<span>{ this.state.temp }</span>
 				</div>
-				{ !this.state.display ?
 				<div class ={style.widgetsm}>
 					Today the wind speed is {this.state.windSpeed} kph, blowing towards the {this.state.windDirection}
 				</div> : null}
-				<div class={ style.details }></div>
+			//only display this bit if you need to
+				{ this.state.display ?
 				<div class= { style_iphone.container }>
-					{ this.state.display ? <Button class={ style_iphone.button } clickFunction={ this.fetchWeatherData }/ > : null }
-				</div>
-			</div>
-			</div>
-		);
+					<sportButton class={ style_iphone.button } clickFunction={ this.setSport("sail") } name="sail"/ >
+				 	<Button class={ style_iphone.button } clickFunction={ this.fetchWeatherData }/ >
+				</div>: null }
+			</div>);
 	}
 
 	parseResponse = (parsed_json) => {
