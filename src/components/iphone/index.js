@@ -10,15 +10,34 @@ import Form from '../sportButton';
 
 export default class Iphone extends Component {
 //var Iphone = React.createClass({
-
 	// a constructor with initial set states
 	constructor(props){
 		super(props);
 		// temperature state
+		this.handleChange = this.handleChange.bind(this);
 		this.state.temp = "";
+		this.state.sport = "";
+		this.state.location = "";
 		// button display state
 		this.setState({ display: true });
 	}
+
+	handleChange(event) {
+  	if (event.target.id=="location"){
+  		console.log("Location picked");
+    	this.setState({location: event.target.value});
+    }
+    else if (event.target.id=="sport"){
+    	console.log("sport picked");
+    	this.setState({sport: event.target.value});
+    }
+    else{
+    	console.log("submit");
+    	event.preventDefault();
+    	this.setState({ display: false });
+    }
+  }
+
 
 	// a call to fetch weather data via wunderground
 	fetchWeatherData = () => {
@@ -33,7 +52,6 @@ export default class Iphone extends Component {
 		// once the data grabbed, hide the button
 		this.setState({ display: false });
 	}
-
 	// the main render method for the iphone component
 	render() {
 		// check if temperature data is fetched, if so add the sign styling to the page
@@ -55,7 +73,7 @@ export default class Iphone extends Component {
 				</div> : null}
 				<div class={ style.details }></div>
 				<div class= { style_iphone.container }>
-					{ this.state.display ? <Form class={ style_iphone.button } clickFunction={ this.fetchWeatherData }/ > : null }
+					{ this.state.display ? <Form class={ style_iphone.button } clickFunction={ this.handleChange }/ > : null }
 				</div>
 			</div>
 			</div>
