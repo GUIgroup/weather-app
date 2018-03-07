@@ -26,7 +26,7 @@ export default class Form extends Component {
   }*/
 
 	// rendering a function when the button is clicked
-	render({clickFunction}, {submitFunction}) {
+	render({clickFunction}) {
 		if(!clickFunction){
 			clickFunction = () => {
 				console.log("passed something as 'clickFunction' that wasn't a function !");
@@ -53,7 +53,7 @@ export default class Form extends Component {
 					<td><input type="button" value="Windsurf" id ="sport" onClick={clickFunction}/></td>
 					</tr>
 					<tr>
-					<td colspan = "3"><input type="submit" value="Submit"/></td>
+					<td colspan="3"><input type="submit" value="Submit"/></td>
 					</tr>
 					</table>
 				</form>
