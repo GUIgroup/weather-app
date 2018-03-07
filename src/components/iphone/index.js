@@ -59,7 +59,7 @@ export default class Iphone extends Component {
 
 		// display all weather data
 		return (
-			<div class={ style.container }>
+			<div class={ style_iphone.container }>
 			<div class = { style.topbar }> our logo</div>
 			<div class={ style.mainwindow }>
 				{ !this.state.display ?
@@ -67,10 +67,9 @@ export default class Iphone extends Component {
 					Today the wind speed is {this.state.windSpeed} kph, blowing towards the {this.state.windDirection}
 				</div> : null}
 				<div class={ style.details }></div>
-				<div class= { style_iphone.container }>
 					{ this.state.display ? <Form class={ style_iphone.form } clickFunction={ this.handleChange }/ > : null }
-				</div>
 			</div>
+			<div class = { style.footer }> some other crap</div>
 			</div>
 		);
 	}
