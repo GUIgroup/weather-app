@@ -2,7 +2,7 @@
 import { h, render, Component } from 'preact';
 // import stylesheets for ipad & button
 import style from './style';
-import style_iphone from '../button/style_iphone';
+import style_iphone from '../sportButton/style_iphone';
 // import jquery for API calls
 import $ from 'jquery';
 // import the Button component
@@ -62,18 +62,13 @@ export default class Iphone extends Component {
 			<div class={ style.container }>
 			<div class = { style.topbar }> our logo</div>
 			<div class={ style.mainwindow }>
-				<div class={ style.widgetsm }>
-					<div>{ this.state.locate }</div>
-					<div>{ this.state.cond }</div>
-					<span>{ this.state.temp }</span>
-				</div>
 				{ !this.state.display ?
 				<div class ={style.widgetsm}>
 					Today the wind speed is {this.state.windSpeed} kph, blowing towards the {this.state.windDirection}
 				</div> : null}
 				<div class={ style.details }></div>
 				<div class= { style_iphone.container }>
-					{ this.state.display ? <Form class={ style_iphone.button } clickFunction={ this.handleChange }/ > : null }
+					{ this.state.display ? <Form class={ style_iphone.form } clickFunction={ this.handleChange }/ > : null }
 				</div>
 			</div>
 			</div>

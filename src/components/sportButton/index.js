@@ -33,18 +33,30 @@ export default class Form extends Component {
 			}
 		}
 		return (
-			<div>
 				<form onSubmit={clickFunction}>
+					<table>
+					<tr>
+					<th colspan="3">
 					<label>
 						Location <input type="text"  id ="location" value={this.state.location} onChange={clickFunction}/>
 					</label>
-					<input type="button" value="Sailing" id ="sport" onClick={clickFunction}/>
-					<input type="button" value="Surfing" id ="sport" onClick={clickFunction}/>
-					<input type="button" value="Swimming" id ="sport" onClick={clickFunction}/>
-					<input type="button" value="diving" id ="sport" onClick={clickFunction}/>
-					<input type="submit" value="Submit"/>
+					</th>
+					</tr>
+					<tr>
+					<td><input type="button" value="Sail" id ="sport" onClick={clickFunction}/></td>
+					<td><input type="button" value="Surf" id ="sport" onClick={clickFunction}/></td>
+					<td><input type="button" value="Swim" id ="sport" onClick={clickFunction}/></td>
+					</tr>
+					<tr>
+					<td><input type="button" value="Scuba" id ="sport" onClick={clickFunction}/></td>
+					<td><input type="button" value="Row" id ="sport" onClick={clickFunction}/></td>
+					<td><input type="button" value="Windsurf" id ="sport" onClick={clickFunction}/></td>
+					</tr>
+					<tr>
+					<td colspan = "3"><input type="submit" value="Submit"/></td>
+					</tr>
+					</table>
 				</form>
-			</div>
 		);
 	}
 }
